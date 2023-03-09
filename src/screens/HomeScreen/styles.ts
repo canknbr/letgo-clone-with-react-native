@@ -1,3 +1,8 @@
-import { StyleSheet,Dimensions } from "react-native/types";
+import { StyleSheet, Dimensions } from 'react-native';
 
-export default StyleSheet.create({});
+export default StyleSheet.create({
+    container : {
+        backgroundColor: '#fff',
+        height:"100%",
+    },
+});
