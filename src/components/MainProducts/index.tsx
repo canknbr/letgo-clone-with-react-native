@@ -6,26 +6,35 @@ import { AntDesign } from '@expo/vector-icons';
 import FavoriteProductItem from '../FavoriteProductItem';
 type MainProductsProps = {
   mainProducts: Product[];
-
+  headerString?: string;
+  filtered?: boolean;
 };
-const MainProducts = ({ mainProducts }: MainProductsProps) => {
+const MainProducts = ({
+  mainProducts,
+  headerString,
+  filtered,
+}: MainProductsProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.titleProduct}>
-        <Text style={styles.topicTitle}>Ankara</Text>
-        <View style={styles.seeAllContainer}>
-          <Text style={styles.detailTitle}>Düzelt</Text>
+        <Text style={filtered ? styles.topicTitleFiltered : styles.topicTitle}>
+          {headerString}
+        </Text>
+        {!filtered && (
+          <View style={styles.seeAllContainer}>
+            <Text style={styles.detailTitle}>Düzelt</Text>
 
-          <AntDesign name="right" size={14} color="#FFC700" />
-        </View>
+            <AntDesign name="right" size={14} color="#FFC700" />
+          </View>
+        )}
       </View>
-      <View style={
-        styles.productContainer
-      }>
+      <View style={styles.productContainer}>
         {mainProducts.map(product => (
           <FavoriteProductItem
             key={product.id}
-           prodType="main" product={product} />
+            prodType="main"
+            product={product}
+          />
         ))}
       </View>
     </View>

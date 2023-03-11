@@ -13,6 +13,10 @@ const HomeScreen = () => {
   const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     setProducts(productsLetgo);
+
+    return () => {
+      setProducts([]);
+    };
   }, []);
 
   return (
@@ -20,7 +24,9 @@ const HomeScreen = () => {
       <MessageNotification />
       <CategoryFilter />
       <FavoriteProducts />
-      <MainProducts mainProducts={products}/>
+      <MainProducts
+      filtered = {false}
+       mainProducts={products} headerString="Ankara" />
     </ScrollView>
   );
 };

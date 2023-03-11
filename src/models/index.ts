@@ -17,3 +17,8 @@ export declare class Categories {
   readonly name: string;
   readonly src: any;
 }
+
+export declare class Filterings {
+  readonly id: string;
+  readonly name: string;
+}

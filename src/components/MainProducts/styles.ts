@@ -4,6 +4,7 @@ export default StyleSheet.create({
   container: {
     width: '92%',
     marginHorizontal: '4%',
+
   },
   titleProduct: {
     flexDirection: 'row',
@@ -13,6 +14,10 @@ export default StyleSheet.create({
   },
   topicTitle: {
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  topicTitleFiltered: {
+    fontSize: 20,
     fontWeight: 'bold',
   },
   seeAllContainer: {
@@ -26,9 +31,8 @@ export default StyleSheet.create({
   productContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems:"flex-start",
-    justifyContent:"center",
-    width:"100%",
-
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    width: '100%',
   },
 });

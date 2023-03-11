@@ -9,6 +9,10 @@ const FavoriteProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     setProducts(productsLetgo);
+
+    return () => {
+      setProducts([]);
+    };
   }, []);
 
   return (
